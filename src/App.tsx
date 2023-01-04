@@ -38,22 +38,12 @@ function App() {
     pages.push(i);
   }
 
-  const handlePageClick = (page: number) => {
-    onPageChange(page);
-  };
-  const handleNextClick = () => {
-    console.log("handleNextClick");
-  };
-  const handlePrevClick = () => {
-    console.log("handlePrevClick");
-  };
-
   const pageNumbers = pages.map((page) => {
     if (page <= maxPageLimit && page >= minPageLimit) {
       return (
         <li
           key={page}
-          onClick={() => handlePageClick(page)}
+          onClick={() => onPageChange(page)}
           className={currentPage === page ? "active" : "page-button"}
         >
           {page}
@@ -86,6 +76,7 @@ function App() {
       setCurrentPage(currentPage + 1);
     }
   };
+
 
   // page ellipses
   function pageIncrementEllipses() {
