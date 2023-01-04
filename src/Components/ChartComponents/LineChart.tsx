@@ -30,7 +30,7 @@ const options = {
         color: 'green',
       },
       legend: {
-        display: true
+        display: false
       },
       title: {
         text: 'Chart.js Line Chart',
