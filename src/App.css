@@ -19,9 +19,149 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+div.head {
+  /* background-color: clear; */
+  color: white;
+  min-height: 100vh;
+  min-width: 75%;
+  left: 25vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+div.coin-list-container {
+  position:fixed;
+  align-self: flex-start;
+  height: 100vh;
+  width: 25%;
+}
+
+div.coin-list-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+ul.coinList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;  
+  position:relative;
+  height: 90%;
+  width: 100%;
+  overflow:auto;
+}
+
+div.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  height: 10%;
+  width: 100%;
+}
+
+ul.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position:relative;
+  height: 10%;
+  width: 100%;
+}
+
+li.coin {
+  display: flex;
+}
+
+li.page-button {
+  float: left;
+  height: 30px;
+  width: 30px;
+}
+
+li.dots {
+  float: left;
+  height: 30px;
+  width: 30px;
+  padding-bottom: 15px;
+}
+
+li.active {
+  float: left;
+  height: 30px;
+  width: 30px;
+  background-color: lightgray;
+  color: black;
+  border-radius: 8px;
+}
+
+li.page-button:hover {
+  background-color: lightgray;
+  border-radius: 8px;
+  color: black;
+}
+
+li.side-button {
+  float: left;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+li.side-button:hover {
+  background-color: lightgray;
+  color: black;
+  border-radius: 8px;
+}
+
+button.coin-selected {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  width: 100%;
+  background-color: white;
+  border: none;
+  color:black;
+}
+
+button.coin {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+button h4 {
+  font-size: x-large;
+}
+
+img.icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  margin-left: 10px;
+  /* margin-left: 20px; */
 }
 
 .App-link {
