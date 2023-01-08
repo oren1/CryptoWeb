@@ -2,6 +2,10 @@
   "name": "crypto-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "8.1.0",
+    "node": "16.13.0"
+  },
   "dependencies": {
     "@apollo/client": "^3.7.3",
     "@testing-library/jest-dom": "^5.16.5",
