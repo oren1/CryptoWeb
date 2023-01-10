@@ -6,6 +6,7 @@ import { Context } from "./Contexts";
 import { CoinsList } from "./Components/CoinComponents/CoinList";
 import { Coin } from "./Types";
 import { LineChart } from "./Components/ChartComponents/LineChart";
+import { BrowserView, MobileView } from "react-device-detect";
 
 function App() {
   const [selectedCoin, setSelectedCoin] = useState<Coin | null>(null);
@@ -77,7 +78,6 @@ function App() {
     }
   };
 
-
   // page ellipses
   function pageIncrementEllipses() {
     if (pages.length > maxPageLimit) {
@@ -101,6 +101,37 @@ function App() {
     return null;
   }
 
+  const onCoinPressed = (fromSymbol: string) => {
+
+  }
+
+  const listView = (loding: boolean, mobile: boolean) => {
+    return (
+      <div
+        className={
+          mobile ? "mobile-coin-list-container" : "coin-list-container"
+        }
+      >
+        {loading ? (
+          <div className={"coin-list-message-container"}>Loading...</div>
+        ) : (
+          <CoinsList coins={data?.listCoins} />
+        )}
+        <ul className="pager">
+          <li className="side-button" onClick={onPrevClick}>
+            Prev
+          </li>
+          {pageDecremenEllipses()}
+          {pageNumbers}
+          {pageIncrementEllipses()}
+          <li className="side-button" onClick={onNextClick}>
+            Next
+          </li>
+        </ul>
+      </div>
+    );
+  };
+
   return (
     <Context.Provider
       value={{
@@ -108,33 +139,16 @@ function App() {
         setSelectedCoin,
         currentPage: currentPage - 1,
         coinsPerPage,
+        onCoinPressed
       }}
     >
-      <div className="App">
-        <header className="App-header">
-          <div className="head">
-            <LineChart fsym={selectedCoin?.symbol}></LineChart>
-          </div>
-          <div className="coin-list-container">
-            {loading ? (
-              <div className="coin-list-message-container">Loading...</div>
-            ) : (
-              <CoinsList coins={data?.listCoins} />
-            )}
-            <ul className="pager">
-              <li className="side-button" onClick={onPrevClick}>
-                Prev
-              </li>
-              {pageDecremenEllipses()}
-              {pageNumbers}
-              {pageIncrementEllipses()}
-              <li className="side-button" onClick={onNextClick}>
-                Next
-              </li>
-            </ul>
-          </div>
-        </header>
-      </div>
+      <BrowserView className="App">
+        <div className="chart-container">
+          <LineChart fsym={selectedCoin?.symbol}></LineChart>
+        </div>
+        {listView(loading, false)}
+      </BrowserView>
+      <MobileView className="App">{listView(loading, true)}</MobileView>
     </Context.Provider>
   );
 }

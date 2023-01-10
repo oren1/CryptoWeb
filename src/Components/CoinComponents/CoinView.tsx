@@ -8,14 +8,15 @@ type CoinViewProps = {
 }
 
 export function CoinView({index, coin}: CoinViewProps) {
-  const {id, coinName, imageUrl} = coin;
-  const { selectedCoin, setSelectedCoin, currentPage, coinsPerPage } = useContext(Context);
+  const {id, symbol, coinName, imageUrl} = coin;
+  const { selectedCoin, setSelectedCoin, onCoinPressed, currentPage, coinsPerPage } = useContext(Context);
   return (
     <li className="coin">
       <button
         className={selectedCoin?.id === id ? "coin-selected" : "coin"}
         onClick={() => {
           setSelectedCoin?.(coin);
+          onCoinPressed?.(symbol);
         }}
       >
         <h4>{(currentPage * coinsPerPage) + index + 1}</h4>
