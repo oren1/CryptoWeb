@@ -1,11 +1,9 @@
 .Home-App {
     text-align: center;
-  }
-  
+}
   
   .Home-App-header {
-    /* background-color: green; */
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,6 +12,11 @@
     color: black;
   }
   
+  .NavigationBarContainer {
+    background-color: blue;
+    width: 100vw;
+    height: 10vh;
+  }
   header h1 {
     margin-bottom: 6px;
   }
@@ -21,10 +24,27 @@
   header h4 {
     margin: 0px;
   }
+  header h5 {
+    margin: 10px;
+  }
   
+  nav {
+    background-color: green;
+  }
+  nav p {
+    /* display: block; */
+    /* float: left; */
+  }
+  ul {
+    background-color: green;
+  }
+  li {
+    float: left;
+  }
+
   header div.projects-container {
     /* background-color: green; */
-    width: 80vw;
+    width: 90vw;
     margin-top: 16px;
     display: flex;
     justify-content:space-around;
@@ -41,6 +61,7 @@
     float: left;
     width: 46%;
     height: 48%;
+    border-radius: 20px;
   }
   
   /* @media only screen and (max-width: 500px) {
@@ -62,6 +83,7 @@
     height: 80%;
     object-fit:cover;
     border-bottom:  1px solid #777;
+    border-radius: 20px;
   }
   
   div.project Link img {

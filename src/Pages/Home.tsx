@@ -3,8 +3,7 @@ import app from "../app.png";
 import website from "../website.png";
 import listCrypto from "../cryptoapp.png";
 import "./Home.css";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
@@ -14,6 +13,7 @@ function Home() {
       <header className="Home-App-header">
         <h1>Oren Shalev</h1>
         <h4>Software Engineer</h4>
+        <h5>React.js | React Native | GraphQL | Express | MongoDB | Redis </h5>
         <div className="projects-container">
           <div className="project">
             <a href="https://apps.apple.com/il/app/crypto-tracker-alert-chain/id1575176418">
