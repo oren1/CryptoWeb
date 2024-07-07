@@ -12,7 +12,7 @@ import {
 import { BrowserRouter } from "react-router-dom";
 
 const client = new ApolloClient({
-  uri: "https://5142s291u6.execute-api.us-east-1.amazonaws.com/",
+  uri: "https://service-wzm3oiciua-uc.a.run.app",
   cache: new InMemoryCache(),
 });
 

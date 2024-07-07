@@ -18,9 +18,9 @@ import VideoPlayer from './VideoPlayer';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="CryptoWebsitePage" element={<CryptoWebsitePage />} />
-      <Route path="VideoPlayer" element={<VideoPlayer url={video} />} />
+      <Route path="/" element={<CryptoWebsitePage />} />
+      {/* <Route path="CryptoWebsitePage" element={<CryptoWebsitePage />} />
+      <Route path="VideoPlayer" element={<VideoPlayer url={video} />} /> */}
       <Route path="chart" element={<LineChartPage />} />
     </Routes>
   );
