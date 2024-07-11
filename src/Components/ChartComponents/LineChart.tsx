@@ -11,7 +11,8 @@ import {
     Legend,
   } from 'chart.js';
   import { Line } from 'react-chartjs-2';
-  
+  import { Bars } from "react-loader-spinner";
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -54,7 +55,19 @@ const options = {
       },
     });
   
-    if (loading || !fsym) return <p>Loading...</p>;
+    if (loading || !fsym)
+    return <div className="loading">
+    <Bars
+      height="80"
+      width="80"
+      color="white"
+      ariaLabel="bars-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+    />  
+    </div>
+
     if (error) return <p>Error : {error.message}</p>;
   
     const lineData = {

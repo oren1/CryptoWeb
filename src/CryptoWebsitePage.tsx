@@ -8,6 +8,7 @@ import { Coin } from "./Types";
 import { LineChart } from "./Components/ChartComponents/LineChart";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { useNavigate } from 'react-router-dom';
+import { ThreeDots } from "react-loader-spinner";
 
 function CryptoWebsitePage() {
   const [selectedCoin, setSelectedCoin] = useState<Coin | null>(null);
@@ -32,7 +33,20 @@ function CryptoWebsitePage() {
     fetchData();
   }, [currentPage, getCoins]);
 
-  if (loading && currentPage === 1) return <p>Loading...</p>;
+  if (loading && currentPage === 1) 
+  return  <div className="loading">
+    <ThreeDots
+  visible={true}
+  height="80"
+  width="80"
+  color="orange"
+  radius="9"
+  ariaLabel="three-dots-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  />
+  </div>;
+
   if (error) return <p>Error : {error.message}</p>;
 
   // build page numbers list based on total number of pages

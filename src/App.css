@@ -10,6 +10,18 @@
   color: white;
 }
 
+div.loading {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
 div.chart-container {
   /* background-color: clear; */
   color: white;
@@ -39,14 +51,14 @@ div.chart-page-container {
 }
 
 div.coin-list-container {
-  position:fixed;
+  position: fixed;
   align-self: flex-start;
   height: 100vh;
   width: 25%;
 }
 
 div.mobile-coin-list-container {
-  position:relative;
+  position: relative;
   align-self: flex-start;
   height: 90vh;
   width: 100vw;
@@ -63,18 +75,18 @@ div.coin-list-message-container {
 ul.coinList {
   list-style-type: none;
   margin: 0;
-  padding: 0;  
-  position:relative;
+  padding: 0;
+  position: relative;
   height: 90%;
   width: 100%;
-  overflow:auto;
+  overflow: auto;
 }
 
 div.pager {
   display: flex;
   justify-content: center;
   align-items: center;
-  position:relative;
+  position: relative;
   height: 10%;
   width: 100%;
 }
@@ -86,7 +98,7 @@ div.mobile-pager {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  position:relative;
+  position: relative;
   height: 10vh;
   width: 100%;
 }
@@ -98,7 +110,7 @@ ul.pager {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  position:relative;
+  position: relative;
   height: 10%;
   width: 100%;
 }
@@ -156,7 +168,7 @@ button.coin-selected {
   width: 100%;
   background-color: white;
   border: none;
-  color:black;
+  color: black;
 }
 
 button.coin {
@@ -191,6 +203,7 @@ img.icon {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
