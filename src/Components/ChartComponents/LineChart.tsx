@@ -55,7 +55,7 @@ const options = {
       },
     });
   
-    if (loading || !fsym)
+    if (loading)
     return <div className="loading">
     <Bars
       height="80"

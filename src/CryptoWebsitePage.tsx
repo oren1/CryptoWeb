@@ -162,7 +162,9 @@ function CryptoWebsitePage() {
     >
       <BrowserView className="App">
         <div className="chart-container">
-          <LineChart fsym={selectedCoin?.symbol}></LineChart>
+          {
+            !selectedCoin ? <div></div> : <LineChart fsym={selectedCoin?.symbol}></LineChart>
+          }
         </div>
         {listView(loading, false)}
       </BrowserView>
